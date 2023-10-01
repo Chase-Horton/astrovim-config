@@ -69,6 +69,21 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    if vim.g.neovide == true then
+      vim.api.nvim_set_keymap(
+        "n",
+        "<C-+>",
+        ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.05<CR>",
+        { silent = true }
+      )
+      vim.api.nvim_set_keymap(
+        "n",
+        "<C-->",
+        ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.05<CR>",
+        { silent = true }
+      )
+      vim.api.nvim_set_keymap("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
+    end
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
