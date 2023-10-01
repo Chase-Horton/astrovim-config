@@ -83,6 +83,11 @@ return {
         { silent = true }
       )
       vim.api.nvim_set_keymap("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
+      vim.g.neovide_refresh_rate = 60
+      vim.g.neovide_refresh_rate_idle = 5
+      vim.g.neovide_confirm_quit = true
+      vim.g.neovide_fullscreen = true
+      vim.o.guifont = "JetBrainsMono Nerd Font:h14"
     end
     -- Set up custom filetypes
     -- vim.filetype.add {

@@ -18,6 +18,7 @@ return {
       desc = "Previous buffer",
     },
 
+    ["<leader>b"] = { name = "Buffers" },
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
       function()
@@ -27,12 +28,29 @@ return {
       end,
       desc = "Pick to close",
     },
-    -- tables with the `name` key will be registered with which-key if it's installed
-    -- this is useful for naming menus
-    ["<leader>b"] = { name = "Buffers" },
-    -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-    ["<leader>a"] = {"<cmd>echo \"Hello World!\"<cr>", desc = "Say hello world!"},
+    ["<leader>w"] = { name = "Window" },
+    ["<leader>wd"] = { "<cmd>:wincmd q<cr>", desc = "Close Window" },
+    ["<leader>wq"] = { "<cmd>:wincmd q<cr>", desc = "Close Window" },
+    ["<leader>wl"] = { "<cmd>:wincmd v<cr>", desc = "Split Right" },
+    ["<leader>wj"] = { "<cmd>:wincmd s<cr>", desc = "Split Down" },
+
+    ["<leader>r"] = { name = "Rust" },
+    ["<leader>rt"] = { "<cmd>:RustTest<cr>", desc = "Run selected test(s) under cursor" },
+    ["<leader>rT"] = { "<cmd>:RustTest!<cr>", desc = "Run all tests in file" },
+    ["<leader>rr"] = { "<cmd>:RustRun<cr>", desc = "Run rust file" },
+    ["<leader>rc"] = {
+      '<cmd>:TermExec direction="vertical" cmd="cargo run"<cr>',
+      desc = "Cargo run in split window",
+    },
+    ["<leader>rb"] = { name = "Bacon" },
+    ["<leader>rbb"] = {
+      '<cmd>:TermExec direction="vertical" cmd="bacon"<cr>',
+      desc = "Run Bacon Base",
+    },
+    ["<leader>rbc"] = {
+      '<cmd>:TermExec direction="vertical" cmd="bacon clippy"<cr>',
+      desc = "Run Bacon Clippy",
+    },
   },
   t = {
     -- setting a mapping to false will disable it
